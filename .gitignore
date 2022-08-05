@@ -1,0 +1,11 @@
+# LOGS
+*.log
+
+# TEMP FILES
+/tmp
+
+# NODE MODULES
+/node_modules
+
+# GIT FILES
+.git/*
