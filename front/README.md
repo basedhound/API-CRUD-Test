@@ -2,7 +2,12 @@
 ## Installation ##
 Clone this repo, and run `npm install` from within the project directory.
 ## Using the app ##
-Run `npm start` from within the project directory.
+Run `npm start` from within the back-end directory.
+
+If "npm start" doesn't work, try updating the dependencies in "package.json"
+
+Then, run `npm start` from within the back-end directory again.
+
 
 Choose the port your API is running on, and click TEST ROUTES to test your API.
 ## Schema ##

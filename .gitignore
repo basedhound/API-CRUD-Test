@@ -1,11 +1,13 @@
-# LOGS
+# ENV FILES
+*.env
+
+# GIT FOLDER
+.git/
+
+# LOG FILES
 *.log
 
-# TEMP FILES
-/tmp
-
 # NODE MODULES
-/node_modules
+node_modules
 
-# GIT FILES
-.git/*
+
