@@ -1,14 +1,14 @@
 # API - Savez-vous implémenter le CRUD ?
 
 ### Compétences évaluées :
-- [x] `Créer une API REST avec Node, Express et MongoDB`
+- [x] **Créer une API REST avec Node, Express et MongoDB**
 <br><br>
 
 # Description
 
 Ce quiz est en fait un réel cas pratique, dans lequel vous aurez l'opportunité de tester vos compétences en codant !
 
-`Question : Quand tout fonctionnera bien, l'application de test affichera un mot secret. Quel est ce mot secret ?`
+**Question : Quand tout fonctionnera bien, l'application de test affichera un mot secret. Quel est ce mot secret ?**
 
 Pour pouvoir répondre correctement, il vous faudra créer une API fonctionnelle comme nous venons de le faire pendant le cours. Votre API devra être connectée à une base de données, car les différentes opérations CRUD seront testées et vérifiées !
 
@@ -85,7 +85,7 @@ Si votre serveur tourne, cliquez sur `TEST-ROUTES` pour lancer les tests. Ces te
 Si votre navigateur s'ouvre avec une erreur 404, attendez quelques secondes et faites un refresh.
 
 Parfois, lors de la première tentative après le lancement de l'application, celle-ci émet une erreur même si l'API fonctionne. Recliquez sur TEST ROUTES. S'il y a toujours une erreur, il est probable qu'elle vienne de votre API.
-<br><br><br>
+<br><br>
  
 
 # EN
