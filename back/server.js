@@ -10,21 +10,16 @@ require("dotenv").config();
 
 //* CORS
 // Install "CORS" = npm install cors
-// Declare "CORS" ;
+// Declare "CORS" :
 const cors = require("cors");
-
-//* BODY-PARSER
-// Install "Body-Parser" = npm install body-parser
-// Declare "Body-Parser" ;
-const bodyParser = require("body-parser");
 
 //* EXPRESS
 // 1. Install "Express" = npm install express 
 // 2. Look for "Express" in package.json
-// 3. Declare "Express" ;
+// 3. Declare "Express" :
 const express = require("express");
 // 4. Test "Express" with console.log
-// 5. Declare "app" ;
+// 5. Declare "app" :
 const app = express();
 // 6. Declare port 
 const port = 3000;
@@ -34,6 +29,7 @@ app.listen(port);
 "createServer" sets up an event listener on the event loop. 
 When the operating system receives a HTTP request on the particular port being listened to, such as port 80, the req is processed by express.
 Since createServer is an asynchronous operation it gets executed in the event loop once the main program is executed. Therefore it doesn't matter where this code is placed. It is at the end in most examples as a standard rather than technical requirements. */
+
 
 //* DATABASE SCHEMES
 // Import Mongoose model + functions
@@ -57,9 +53,10 @@ app.use(cors()) // Call "CORS"
 //     next();
 // });
 
-//* Use Body-Parser
-/* Body-Parser extracts the entire body portion of an incoming request stream and parses it on "req.body" as something easier to interact with. */
-app.use(bodyParser.json()) // Call "Body Parser"
+//* Call PARSER => .use(express.json())
+/* Pour gérer la requête POST venant de l'application front-end, on a besoin d'en extraire le corps JSON. 
+Pour cela, vous avez juste besoin d'un middleware très simple, mis à disposition par le framework Express. Juste après la déclaration de la constante  app  , ajoutez : */
+app.use(express.json()) 
 
 //*==============================================
 //*================= ROUTES =====================
@@ -148,7 +145,7 @@ app.post("/api/products", (req, res) => {
         .catch((err) => console.error("Error: ", err));
 });
 
-// //* 4| PUT Request => /api/products/:id
+//* 4| PUT Request => /api/products/:id
 app.put("/api/products/:id", (req, res) => {
     const id = req.params.id; // or "const {id} = req.params"
     updateProduct(id, req.body)
@@ -156,7 +153,7 @@ app.put("/api/products/:id", (req, res) => {
         .catch((err) => console.error("Error: ", err));
 });
 
-// //* 5| DELETE Request => /api/products/:id
+//* 5| DELETE Request => /api/products/:id
 app.delete("/api/products/:id", (req, res) => {
     const id = req.params.id; // or "const {id} = req.params"
     deleteProduct(id)
