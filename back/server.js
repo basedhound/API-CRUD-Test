@@ -1,51 +1,30 @@
-//*=========================================
-//*================= MAIN ==================
-//*=========================================
+//============================================
+//=============== APPLICATION ================
+//============================================
 
-//* DOTENV
-// 1. Install "Dotenv" = npm install dotenv
-// 2. Declare "Dotenv" ;
-require("dotenv").config();
-// You can now use "process.env" (.env file)
+//* Imports :
+require("dotenv").config(); // Dotenv
+const cors = require("cors"); // Cors
+const express = require("express"); // Express
 
-//* CORS
-// Install "CORS" = npm install cors
-// Declare "CORS" :
-const cors = require("cors");
-
-//* EXPRESS
-// 1. Install "Express" = npm install express 
-// 2. Look for "Express" in package.json
-// 3. Declare "Express" :
-const express = require("express");
-// 4. Test "Express" with console.log
-// 5. Declare "app" :
+//* Application Express / Serveur
 const app = express();
-// 6. Declare port 
 const port = 3000;
-// 7. Specify which PORT to listen
 app.listen(port);
-/* app.listen is a wrapper function that calls "HTTP.createServer".
-"createServer" sets up an event listener on the event loop. 
-When the operating system receives a HTTP request on the particular port being listened to, such as port 80, the req is processed by express.
-Since createServer is an asynchronous operation it gets executed in the event loop once the main program is executed. Therefore it doesn't matter where this code is placed. It is at the end in most examples as a standard rather than technical requirements. */
-
 
 //* DATABASE SCHEMES
-// Import Mongoose model + functions
 const { createProduct, getProducts, getProduct, updateProduct, deleteProduct } = require("./models/Product");
-// const { res } = require("express");
 // Using {object} syntax allows to import/export several elements. Use "," between each element.
 
-//*==============================================
-//*================= MIDDLEWARE =================
-//*==============================================
-/* Express middleware are functions that execute during the lifecycle of a request to the Express server. Each middleware has access to the HTTP request and response for each route (or path) it's attached to. In fact, Express itself is compromised wholly of middleware functions. */
 
-//* If "npm CORS" is installed, use :
-app.use(cors()) // Call "CORS"
+//==============================================
+//================= MIDDLEWARE =================
+//==============================================
 
-//* If "npm CORS" isn't installed, use :
+// If "npm CORS" is installed, use :
+app.use(cors())
+
+// If "npm CORS" isn't installed, use :
 // app.use((req, res, next) => {
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 //     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -53,15 +32,13 @@ app.use(cors()) // Call "CORS"
 //     next();
 // });
 
-//* Call PARSER => .use(express.json())
-/* Pour gérer la requête POST venant de l'application front-end, on a besoin d'en extraire le corps JSON. 
-Pour cela, vous avez juste besoin d'un middleware très simple, mis à disposition par le framework Express. Juste après la déclaration de la constante  app  , ajoutez : */
-app.use(express.json()) 
+app.use(express.json()) // Parser
 
-//*==============================================
-//*================= ROUTES =====================
-//*=========== ASYNC/AWAIT" METHOD ==============
-//*==============================================
+
+//==============================================
+//================= ROUTES =====================
+//=========== ASYNC/AWAIT" METHOD ==============
+//==============================================
 
 //* 1| GET Request => /api/products
 // Always add 2 parameters : request (req) / response (res)
@@ -118,10 +95,10 @@ app.delete("/api/products/:id", async (req, res) => {
     };
 });
 
-//*==============================================
-//*================= ROUTES =====================
-//*============= "THEN" METHOD ==================
-//*==============================================
+//==============================================
+//================= ROUTES =====================
+//============= "THEN" METHOD ==================
+//==============================================
 /* 
 //* 1| GET Request => /api/products
 app.get("/api/products", (req, res) => {

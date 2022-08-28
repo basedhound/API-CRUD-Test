@@ -1,15 +1,17 @@
-//* MONGOOSE
-// Import Mongoose :
+//==============================================
+//=============== PRODUCT MODEL ================
+//==============================================
+
+//* Mongoose import
 const mongoose = require("../services/database").mongoose; // common syntax
 // const { mongoose } = require("../services/database"); // destructured syntax
 
-//* SCHEMAS
-// Declare "schema" :
+//* Schema Product
 const Schema = mongoose.Schema; // common syntax
 //const { Schema } = mongoose;  // destructured syntax
 
 // Create a "schema" :
-const productSchema = new Schema({
+const productSchema = mongoose.Schema({
     name: String,
     description: String,
     price: Number,
@@ -19,10 +21,9 @@ const productSchema = new Schema({
 // Create a "model" for export/import
 const Product = mongoose.model("Product", productSchema);
 
-//*===============================================
-//*================ CRUD FUNCTIONS ===============
-//*===============================================
-
+//===============================================
+//================ CRUD FUNCTIONS ===============
+//===============================================
 function createProduct(item) {
     //* destructured syntax :
     const { description, inStock, name, price } = item;

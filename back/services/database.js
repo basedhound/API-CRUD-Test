@@ -1,27 +1,24 @@
+//===============================================
+//================== DATABASE ===================
+//===============================================
 
-//*===============================================
-//*================== DATABASE ===================
-//*===============================================
-
-// 1. Install MONGOOSE : "npm install mongoose"
+//* Mongoose import
 const mongoose = require("mongoose");
 
-// 2. Declare environment variables
-const password = process.env.PASSWORD;
-const username = process.env.USERNAME;
+//* (Sécurité) Variables d'environnement ( => .env )
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+const cluster = process.env.DB_CLUSTER;
 const database = process.env.DATABASE;
 
-// 3. Declare database identifier
-const uri = `mongodb+srv://${username}:${password}@api-crud-test.r7pfwra.mongodb.net/${database}?retryWrites=true&w=majority`;
+//* MongoDB adresse
+const uri = `mongodb+srv://${username}:${password}@${cluster}.zdqnwhr.mongodb.net/${database}?retryWrites=true&w=majority`;
 
-// 4. Connect to database 
-mongoose.connect(uri).then(() => {
-    console.log("Connected to database")
-})
-    .catch((err) => console.error(err));
-// ".connect" sends a promise back
-// So, we can use ".then" and ".catch"
+//* MongoDB connexion
+mongoose.connect(uri)
+    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .catch((err) => console.error('Connexion à MongoDB échouée !', err));
 
-// 5.Export
+//* Exports 
 module.exports = { mongoose: mongoose }; // common syntax
 // module.exports = {mongoose} // destructured syntax
