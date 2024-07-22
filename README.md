@@ -23,24 +23,29 @@
 - `inStock` : Whether the product is in stock, of type Boolean.
 
 ### You will implement five routes:
+
 - [x] **GET**: `/api/products`
+
   - Returns all products in the form `{ products: Product[] }`<br><br>
 
 - [x] **GET**: `/api/products/:id`
+
   - Returns the product with the provided `_id` in the form `{ product: Product }`<br><br>
 
 - [x] **POST**: `/api/products`
+
   - Creates a new product in the database.
   - The request body should be in the following form:
 
   ```json
   {
-      "name": "string",
-      "description": "string",
-      "price": "number",
-      "inStock": "boolean"
+    "name": string,
+    "description": string,
+    "price": number,
+    "inStock": boolean
   }
-<br/>
+
+  ```
 
 - Returns the created `Product` (including its `_id` field) in the form `{ product: Product }`.
 
@@ -76,6 +81,7 @@ product.save()
   <br><br>
 
 ---
+
 **[FR]** Ce projet est un quiz conçu pour tester vos compétences en créant une API REST avec Node, Express et MongoDB. Lorsque tout fonctionnera correctement, l'application de test affichera un mot secret. Quel est ce mot secret ? Pour répondre correctement, vous devez créer une API fonctionnelle comme démontré pendant le cours. Votre API doit être connectée à une base de données, car diverses opérations CRUD seront testées et vérifiées. Vous allez créer une API basique pour une boutique en ligne qui permet de créer, lire, modifier et supprimer des produits. Les produits auront quatre champs obligatoires :
 
 - `name` : le nom du produit, de type String ;
@@ -137,9 +143,6 @@ product.save()
 - Retournera un objet de la forme `{ message: 'Deleted!' }`
   <br><br>
 
-
-
-
 ## <br /> <a name="tech-stack">⚙️ Tech Stack</a>
 
 - **REST API** (Representational State Transfer Application Programming Interface) is a specific type of API that adheres to the principles of REST, an architectural style for designing networked applications. REST APIs use standard HTTP methods (GET, POST, PUT, DELETE) to interact with resources, which are typically represented in JSON or XML format. REST APIs are stateless, meaning each request from a client to the server must contain all the information needed to understand and process the request. This approach simplifies the interactions between client and server and ensures scalability and performance.
@@ -153,7 +156,6 @@ product.save()
 - **MongoDB** is a NoSQL database system known for its flexibility and scalability, ideal for handling large volumes of unstructured or semi-structured data. It stores data in JSON-like documents, making it easy to integrate with modern applications. MongoDB's features include powerful querying capabilities, automatic sharding for horizontal scaling, flexible data models, and support for distributed transactions in recent versions.
 
 - **Mongoose** is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a schema-based solution to model application data, ensuring data consistency and providing powerful tools for querying and validation. Mongoose simplifies the process of interacting with MongoDB by providing a higher abstraction layer.
-
 
 ## <br/> <a name="features">📝 Features</a>
 
