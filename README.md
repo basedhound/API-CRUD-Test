@@ -37,7 +37,7 @@ The frontend app requires the following endpoints with the correct behavior for 
 * **POST** : `/api/products`
   Request body contains:
 
-```json
+```js
 {
   name: string,
   description: string,
@@ -53,7 +53,7 @@ Returns product created in database (including `_id` field) as `{ product: Produ
 
 Request body contains:
 
-```json
+```js
 {
   name: string,
   description: string,
