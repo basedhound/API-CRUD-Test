@@ -74,7 +74,7 @@ Returns `{ message: 'Deleted!' }` <br><br>
 
 ### Schema
 
-```
+```js
 mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
