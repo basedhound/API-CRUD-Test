@@ -99,6 +99,8 @@ mongoose.Schema({
 
 - **Mongoose** is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a schema-based solution to model application data, ensuring data consistency and providing powerful tools for querying and validation. Mongoose simplifies the process of interacting with MongoDB by providing a higher abstraction layer.
 
+- **Dotenv** is a module that loads environment variables from a .env file into process.env. This practice helps manage configuration and secrets in Node.js applications, keeping them out of the source code and making it easier to change settings without modifying the application code.
+
 ## <br/> <a name="features">📝 Features</a>
 
 👉 **CRUD Operations**: Implement full Create, Read, Update, and Delete functionality for managing products.
@@ -130,6 +132,13 @@ Make sure you have the following installed on your machine:
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
+
+Install nodemon globally on your machine, open your terminal and run the following command:
+```bash
+npm install -g nodemon
+```
+
+- **Nodemon** is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 <br/>**Cloning the Repository**
 
