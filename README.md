@@ -28,13 +28,13 @@
 
 The frontend app requires the following endpoints with the correct behavior for all tests to pass:
 
-- GET : `/api/products`<br>
+- **GET** : `/api/products`<br>
   Returns all products as `{ products: Product[] }`<br> <br>
 
-- GET : `/api/products/:id`<br>
+- **GET** : `/api/products/:id`<br>
   Returns product for given ID as `{ product: Product }`<br> <br>
 
-* POST : `/api/products`
+* **POST** : `/api/products`
   Request body contains:
 
 ```
@@ -49,7 +49,7 @@ The frontend app requires the following endpoints with the correct behavior for 
 Creates product in database.<br>
 Returns product created in database (including `_id` field) as `{ product: Product }`<br><br>
 
-- PUT: `/api/products/:id`
+- **PUT** : `/api/products/:id`
 
 Request body contains:
 
@@ -66,11 +66,11 @@ Modifies product with given ID as per object provided in request body.
 
 Returns `{ message: 'Modified!' }`<br><br>
 
-- DELETE: `/api/products/:id`
+- **DELETE** : `/api/products/:id`
 
 Deletes product with given ID.
 
-Returns `{ message: 'Deleted!' }`
+Returns `{ message: 'Deleted!' }` <br><br>
 
 ### Schema
 
